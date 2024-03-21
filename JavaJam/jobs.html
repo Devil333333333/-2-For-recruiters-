@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="UK">
+
+<head>
+	<title>Кав'ярня JavaJam</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="javajam.css">
+
+
+	<script type="text/javascript">
+		function func() {
+			var epattern = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
+			var name = document.getElementById("myName").value;
+			var mail = document.getElementById("myEmail").value;
+			var exp = document.getElementById("myExperience").value;
+
+			if (name == "") {
+				alert('Будь ласка, введіть імя');
+				return false;
+			}
+			else if (mail == "" || !(mail.match(epattern))) {
+				alert('Введіть дійсну адресу електронної пошти');
+				return false;
+			}
+			else if (exp == "") {
+				alert('Будь ласка, введіть досвід');
+				return false;
+			}
+			return true;
+		}
+
+	</script>
+</head>
+
+<body>
+	<div id="wrapper">
+		<header>
+			<h1>JavaJam Coffee House</h1>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="home.html">Домашня сторінка</a></li>
+				<li><a href="menu.html">Меню</a></li>
+				<li><a href="music.html">Музика</a></li>
+				<li><a href="jobs.html">Вакансії</a></li>
+			</ul>
+		</nav>
+		<main>
+			<h2>Вакансії в JavaJam</h2>
+			<p>Хочете працювати в JavaJam? Заповніть форму нижче, щоб розпочати свою заявку. Обов’язкові поля позначені
+				зірочкою (*).</p>
+			<form method="post" action="http://ajinkyaghadge.net/formhandle.php" onsubmit="return func()">
+				<label for="myName">*Ім'я:</label><br><br>
+				<dd><input type="text" id="myName" name="myName"></dd>
+				<label for="myEmail">*Електронна пошта:</label>
+				<input type="text" type="email" id="myEmail" name="myEmail">
+				<label for="myExperience">*Досвід:</label>
+				<textarea id="myExperience" name="myExperience" cols="20" rows="2"></textarea>
+				<input type="submit" value="Подати заявку" id="mySubmit" />
+			</form>
+		</main>
+		<footer>Copyright &copy; 2022 Кав'ярня JavaJam<br>
+			<i><a href="#">hcdjchch@gmail.com</a></i>
+		</footer>
+	</div>
+</body>
+
+</html>
